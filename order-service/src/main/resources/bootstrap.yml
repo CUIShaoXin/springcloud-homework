@@ -15,6 +15,20 @@ spring:
         namespace: dev
         group: DEFAULT_GROUP
         file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+        port: 8719
+      datasource:
+        flow:
+          nacos:
+            server-addr: localhost:8848
+            namespace: dev
+            data-id: order-service-flow-rules
+            group-id: SENTINEL_GROUP
+            data-type: json
+            rule-type: flow
+
 
 feign:
   client:
